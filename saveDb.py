@@ -7,6 +7,12 @@ def saveDb(dataBaseName, date):
 
 
 if __name__=="__main__":
+    dbName = ""
     date = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-    saveDb(sys.argv[1], date)
-    os.system("ls")
+
+    if len(sys.argv) == 1 :
+        dbName = input("veuillez rentrer le nom de la table : ")
+        saveDb(dbName, date)
+    else:
+        saveDb(sys.argv[1], date)
+
